@@ -9,16 +9,16 @@ class Form extends CI_Controller {
                 $this->load->model('user_model');
                 $this->load->library('form_validation');
                 $this->load->database();
-
                 $this->form_validation->set_rules('password', 'Password', 'required',
                         array('required' => 'You must provide a %s.')
                 );
+                $data['title']="Algobreizh - Authentification";
                 $this->form_validation->set_rules('email', 'Email', 'required');
                 $this->form_validation->set_rules('password', 'password', 'required');
              //   $result = $this->user_model->userLogin($email,$mdp);
                 if ($this->form_validation->run() == FALSE)
                 {
-                        $this->load->view('common/header');
+                        $this->load->view('common/header',$data);
                         $this->load->view('site/auth');
                         $this->load->view('common/footer');
                 }
@@ -31,7 +31,7 @@ class Form extends CI_Controller {
                         $data['title']='Algobreizh';
                         $requete=$this->user_model->userLogin($data['mail'],$data['password']);
                         if (count($requete)==0){
-                                $this->load->view('common/header');
+                                $this->load->view('common/header',$data);
                                 $this->load->view('site/auth');
                                 $this->load->view('common/footer');                           
                         }
@@ -42,7 +42,8 @@ class Form extends CI_Controller {
                                 }
                                 $requete=$this->user_model->userRecup($data['mail'],$data['statut']);
                                 if(count($requete)==0){
-                                        $this->load->view('common/header');
+                                        $this->load->view('common/header',$data);
+                                        $this->load->view('site/auth');
                                         $this->load->view('common/footer');      
                                 }
                                 else{
