@@ -11,7 +11,7 @@
                return $this->db->select('*')
                             ->from($this->table)
                             ->where('mail', $email)
-                            ->where('mdp', $mdp)
+                            ->where('mdp', md5($mdp))
                             ->get()
                             ->result();
 

@@ -13,10 +13,10 @@
 <div class="footer">
     <p>AlgoBreizh All right reserved<p>
 </div>
-			<script src="http://localhost/Algo/js/jquery.min.js"></script>
-			<script src="http://localhost/Algo/js/jquery.scrolly.min.js"></script>
-			<script src="http://localhost/Algo/js/skel.min.js"></script>
-			<script src="http://localhost/Algo/js/util.js"></script>
-			<script src="http://localhost/Algo/js/main.js"></script>
+			<script src="http://localhost/AlgoBreizh/js/jquery.min.js"></script>
+			<script src="http://localhost/AlgoBreizh/js/jquery.scrolly.min.js"></script>
+			<script src="http://localhost/AlgoBreizh/js/skel.min.js"></script>
+			<script src="http://localhost/AlgoBreizh/js/util.js"></script>
+			<script src="http://localhost/AlgoBreizh/js/main.js"></script>
 
 </body>

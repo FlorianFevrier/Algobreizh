@@ -9,13 +9,9 @@ class Form extends CI_Controller {
                 $this->load->model('user_model');
                 $this->load->library('form_validation');
                 $this->load->database();
-                $this->form_validation->set_rules('password', 'Password', 'required',
-                        array('required' => 'You must provide a %s.')
-                );
                 $data['title']="Algobreizh - Authentification";
                 $this->form_validation->set_rules('email', 'Email', 'required');
                 $this->form_validation->set_rules('password', 'password', 'required');
-             //   $result = $this->user_model->userLogin($email,$mdp);
                 if ($this->form_validation->run() == FALSE)
                 {
                         $this->load->view('common/header',$data);
@@ -51,15 +47,27 @@ class Form extends CI_Controller {
                                                 $this->session;
                                                 $this->session->set_userdata('mail',$row->mail);                                                
                                                 $this->session->set_userdata('id',$row->idCommercial);
-                                                $this->session->set_userdata('zone',$row->zone);  
+                                                $this->session->set_userdata('zone',$row->zone); 
+                                                $this->session->set_userdata('nom',$row->nom); 
                                         }
                                         $this->session;
-                                        $this->session->set_userdata('statut',$data['statut']);                                        
-                                        $this->load->view('common/headerCompte',$data);
-                                        $this->load->view('site/vcompte',$data);
-                                        $this->load->view('common/footer');
+                                        $this->session->set_userdata('statut',$data['statut']);   
+                                        if($_SESSION['statut']=='commercial'){                                  
+                                                $this->load->view('common/headerCommercial',$data);
+                                                $this->load->view('commercial/vcompteCommercial',$data);
+                                                $this->load->view('common/footer');
+                                        }
+                                        if ($_SESSION['statut']=='client'){
+                                                $this->load->view('common/header',$data);
+                                                $this->load->view('client/vcompteClient',$data);
+                                                $this->load->view('common/footer');
+                                        }
+                                        if ($_SESSION['statut']=='teleprospecteur'){
+                                                $this->load->view('common/headerCompte',$data);
+                                                $this->load->view('tele/vcompteTele',$data);
+                                                $this->load->view('common/footer');
+                                        }
                                 }
-                               
                         }
                 }
         }

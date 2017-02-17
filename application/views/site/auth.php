@@ -13,9 +13,9 @@
 
 <section id="main">
         <div class="inner">
-                <?php echo validation_errors(); ?>
                 <?php echo form_open('form'); ?>
                 <h3 align="center">Connexion</h3>
+                <?php echo validation_errors(); ?>
                 <div class="row uniform 50%">
                     <div class="6u 12u$(xsmall)">
                         <input type="email" name="email" value="" size="50" placeholder="E-mail"/>

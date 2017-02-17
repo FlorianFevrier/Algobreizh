@@ -8,11 +8,11 @@
         text-align:center;
         overflow:auto;
         margin:auto;
+        background-color:#F2F2F2;
 }
 </style>
-<div class="main">
-        <p>Authentification réussi </p>
-        <p>
-                bienvenue <?php echo $mail; ?>
-        </p>
-</div>
+<section id="main">
+    <div class="inner">
+        <p>Bienvenue <?php echo$_SESSION['nom']; ?></p>
+    </div>
+</section>
