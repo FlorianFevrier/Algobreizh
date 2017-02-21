@@ -2,7 +2,8 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
 
     class Site extends CI_Controller {
-        public function index(){
+        public function index(){          
+            $this->session->sess_destroy();
             $data["title"]="Page d’accueil"; 
             $this->load->view('common/header',$data);
             $this->load->view('site/index',$data);

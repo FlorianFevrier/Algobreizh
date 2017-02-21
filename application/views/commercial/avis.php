@@ -1,16 +1,4 @@
-<style>
-.main{
-        position:absolute;
-        top:60px;
-        bottom:60px;
-        left:0;
-        right:0;
-        text-align:center;
-        overflow:auto;
-        margin:auto;
-        background-color:#F2F2F2;
-}
-</style>
+
 <section id="main">
     <div class="inner">
 		<h3>Avis</h3>
@@ -19,17 +7,22 @@
                 <div class="6u 12u$(xsmall)">
  					<div class="select-wrapper">
 						<select name="client" id="client">
-							<option value="">- Clients -</option>
-							<option value="1">Manufacturing</option>
-							<option value="1">Shipping</option>
-							<option value="1">Administration</option>
-							<option value="1">Human Resources</option>
+						<?php
+							foreach($clients as $client){
+								?>
+								<option value="<?php echo $client['idClient'];?>"><?php echo $client['nom'];?></option>
+							<?php } ?>
 						</select>
 					</div> 
-                </div>   
+                </div> 
                 <div class="12u$">
 					<textarea name="message" id="message" placeholder="Saisisez votre message..." rows="6"></textarea>  
                 </div>
+				<div class="6u$ 12u$(small)">
+					<input type="checkbox" id="human" name="human" E>
+					<label for="human">Je ne suis pas un robot</label>
+				</div>  
+				<?php echo validation_errors(); ?>
 				<div class="12u$">
 					<ul class="actions">
 							<li><input type="submit" value="Valider" /></li>

@@ -8,7 +8,7 @@
     </head>
     </style>
        <header id="header">
-                <a href="<?= site_url("site"); ?>" class="logo"><strong>AlgoBreizh</strong>&nbsp;<?php echo $_SESSION['statut']; ?></a>
+                <span class="logo"><strong>AlgoBreizh</strong>&nbsp;<?php echo $_SESSION['statut']; ?></span>
                 <nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -17,7 +17,7 @@
 					<li><a href="<?= site_url("commercial"); ?>">Home</a></li>
                     <li><a href="<?= site_url("commercial/visite"); ?>">Visite</a></li>
 					<li><a href="<?= site_url("commercial/avis"); ?>">Avis</a></li>                                        
-					<li><a href="<?= site_url("site"); ?>">Déonnexion</a></li>
+					<li><a href="<?= site_url("site"); ?>">Déconnexion</a></li>
 				</ul>
 			</nav>
         </header>

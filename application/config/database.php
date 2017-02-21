@@ -77,6 +77,7 @@ $db['default'] = array(
 	'dsn' => '',
 	'hostname' => '51.254.222.13',
 	'username' => 'algo',
+	'password' => 'Algobreizh35$',
 	'database' => 'algobreizh',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
