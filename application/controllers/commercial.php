@@ -9,10 +9,10 @@ class Commercial extends CI_Controller {
         $this->load->view('common/footer');
     }
     public function visite(){
-            $this->load->model('commercial_model');
+            $this->load->model('Commercial_model');
             $this->load->database();
             $data['title']="Algobreizh - Visites";
-            $data['clients']=$this->commercial_model->getVisite($_SESSION['zone']);
+            $data['clients']=$this->Commercial_model->getVisite($_SESSION['zone']);
             $this->load->view('common/headerCommercial',$data);
             $this->load->view('commercial/visite',$data);
             $this->load->view('commercial/footerVisite');
@@ -20,11 +20,11 @@ class Commercial extends CI_Controller {
 
     public function avis(){
         $this->load->helper(array('form', 'url'));
-        $this->load->model('commercial_model');
+        $this->load->model('Commercial_model');
         $this->load->library('form_validation');
         $this->load->database();
         $data['title']="Algobreizh - Avis";
-        $data['clients']=$this->commercial_model->getVisite($_SESSION['zone']);
+        $data['clients']=$this->Commercial_model->getVisite($_SESSION['zone']);
         $this->load->view('common/headerCommercial',$data);
         $this->load->view('commercial/avis');
         $this->load->view('common/footer');
@@ -32,11 +32,11 @@ class Commercial extends CI_Controller {
 
     public function avisPost(){
         $this->load->helper(array('form', 'url'));
-        $this->load->model('commercial_model');
+        $this->load->model('Commercial_model');
         $this->load->library('form_validation');
         $this->load->database(); 
         $data['title']="Algobreizh - Avis"; 
-        $data['clients']=$this->commercial_model->getVisite($_SESSION['zone']);
+        $data['clients']=$this->Commercial_model->getVisite($_SESSION['zone']);
         $this->form_validation->set_rules('client', 'client', 'required');
         $this->form_validation->set_rules('message', 'message', 'required');
         $this->form_validation->set_rules('human', 'human', 'required');
@@ -55,13 +55,13 @@ class Commercial extends CI_Controller {
                     'idCommercial' => $this->session->id,
                     'com' => $this->input->post('message') 
                 );             
-                    $this->commercial_model->avisPost($data);
+                    $this->Commercial_model->avisPost($data);
                     $data=array(
                         'derniereVisite'=>$date,
                         'idClient' => $this->input->post('client')
                     );
 
-                    $this->commercial_model->majVisite($data);
+                    $this->Commercial_model->majVisite($data);
                     $data['succes']="Avis inséré";
                     $data['title']="Algobreizh - Avis";
                     $this->load->view('common/headerCommercial',$data);

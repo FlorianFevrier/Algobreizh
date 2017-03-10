@@ -9,13 +9,19 @@
     <body>
         <header id="header">
                 <a href="<?= site_url("site"); ?>" class="logo"><strong>AlgoBreizh</strong></a>
-                <nav>
+                <nav id="desktop">
+                    <a href="<?= site_url("site"); ?>">Accueil</a>
+                    <a href="<?= site_url("form"); ?>">Connexion</a>
+                    <a href="<?= site_url("form"); ?>">Inscription</a>
+                </nav>
+                <nav id="mobile">
 					<a href="#menu">Menu</a>
 				</nav>
             <nav id="menu">
 				<ul class="links">
-					<li><a href="<?= site_url("site"); ?>">Home</a></li>
+					<li><a href="<?= site_url("site"); ?>">Accueil</a></li>
 					<li><a href="<?= site_url("form"); ?>">Connexion</a></li>
+					<li><a href="<?= site_url("form"); ?>">Inscription</a></li>
 				</ul>
 			</nav>
         </header>

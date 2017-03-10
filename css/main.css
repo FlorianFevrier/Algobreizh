@@ -1735,7 +1735,7 @@
 	}
 
 	a {
-		color: #C80000;
+		color: white;
 	}
 
 	strong, b {
@@ -4546,3 +4546,46 @@
 			}
 
 		}
+
+/* Modif perso */
+    #mobile{
+        display: none;
+    }
+    @media screen and (max-width:600px) {
+        #mobile{
+            display: block;
+        }
+    }
+    @media screen and (max-width:600px) {
+        #desktop{
+            display: none;
+        }
+	}
+	.main{
+        position:absolute;
+        top:60px;
+        bottom:60px;
+        left:0;
+        right:0;
+        text-align:center;
+        overflow:auto;
+        margin:auto;
+        background-color:#F2F2F2;
+	}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+   -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.flex-container-center {
+    display: -webkit-flex;
+    display: flex;
+   -webkit-justify-content: center;
+    justify-content: center;
+}
+.invisible{
+	visibility: hidden;
+	width:0px;
+	height:0px;
+}

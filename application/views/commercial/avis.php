@@ -19,7 +19,7 @@
 					<textarea name="message" id="message" placeholder="Saisisez votre message..." rows="6"></textarea>  
                 </div>
 				<div class="6u$ 12u$(small)">
-					<input type="checkbox" id="human" name="human" E>
+					<input type="checkbox" id="human" name="human" >
 					<label for="human">Je ne suis pas un robot</label>
 				</div>  
 				<?php echo validation_errors(); ?>

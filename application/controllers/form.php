@@ -29,7 +29,8 @@ class Form extends CI_Controller {
                         if (count($requete)==0){
                                 $this->load->view('common/header',$data);
                                 $this->load->view('site/auth');
-                                $this->load->view('common/footer');                           
+                                $this->load->view('common/footer');      
+                                                     
                         }
                         else{
                                 foreach ($requete as $row){
@@ -43,26 +44,40 @@ class Form extends CI_Controller {
                                         $this->load->view('common/footer');      
                                 }
                                 else{
-                                        foreach ($requete as $row){
-                                                $this->session;
-                                                $this->session->set_userdata('mail',$row->mail);                                                
-                                                $this->session->set_userdata('id',$row->idCommercial);
-                                                $this->session->set_userdata('zone',$row->zone); 
-                                                $this->session->set_userdata('nom',$row->nom); 
-                                        }
                                         $this->session;
                                         $this->session->set_userdata('statut',$data['statut']);   
-                                        if($_SESSION['statut']=='commercial'){                                  
+                                        if($_SESSION['statut']=='commercial'){   
+                                                foreach ($requete as $row){
+                                                        $this->session;
+                                                        $this->session->set_userdata('mail',$row->mail);                                                
+                                                        $this->session->set_userdata('id',$row->idCommercial);
+                                                        $this->session->set_userdata('zone',$row->zone); 
+                                                        $this->session->set_userdata('nom',$row->nom); 
+                                                        }
                                                 $this->load->view('common/headerCommercial',$data);
                                                 $this->load->view('commercial/vcompteCommercial',$data);
                                                 $this->load->view('common/footer');
                                         }
                                         if ($_SESSION['statut']=='client'){
-                                                $this->load->view('common/header',$data);
+                                                foreach ($requete as $row){
+                                                        $this->session;
+                                                        $this->session->set_userdata('mail',$row->mail);                                                
+                                                        $this->session->set_userdata('id',$row->idClient);
+                                                        $this->session->set_userdata('zone',$row->zone); 
+                                                        $this->session->set_userdata('nom',$row->nom); 
+                                                        }
+                                                $this->load->view('common/headerClient',$data);
                                                 $this->load->view('client/vcompteClient',$data);
                                                 $this->load->view('common/footer');
                                         }
                                         if ($_SESSION['statut']=='teleprospecteur'){
+                                                foreach ($requete as $row){
+                                                        $this->session;
+                                                        $this->session->set_userdata('mail',$row->mail);                                                
+                                                        $this->session->set_userdata('id',$row->idCommercial);
+                                                        $this->session->set_userdata('zone',$row->zone); 
+                                                        $this->session->set_userdata('nom',$row->nom); 
+                                                        }                                               
                                                 $this->load->view('common/headerCompte',$data);
                                                 $this->load->view('tele/vcompteTele',$data);
                                                 $this->load->view('common/footer');

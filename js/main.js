@@ -6,6 +6,20 @@
 
 (function($) {
 
+$(document).ready(function(){
+	$(".button").click(function(){
+		$(".total").html("0 €");
+	});
+    $(".popup").change(function(){
+		var prix = $(this).find(".Prix").val();
+		var value =  $(this).find("option:selected").text();
+		var print=(value*prix).toFixed(2) + " €";
+		
+        $(".total").html(print);
+    });
+});
+
+
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
 		large:	'(max-width: 1280px)',

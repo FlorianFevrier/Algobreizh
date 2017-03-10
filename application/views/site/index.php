@@ -23,11 +23,5 @@ Les chiffres économiques les plus récents sont ceux relatifs à l'exercice 201
 décembre 2013.
     </p>
     </section>
-    <section>
-        <ul class="actions">
-            <li><a href="<?= site_url("form"); ?>" class="button">Connexion</a></li>
-            <li><a href="" class="button">Inscription</a></li>
-        </ul>
-    </section>
 </div>
 </section>
