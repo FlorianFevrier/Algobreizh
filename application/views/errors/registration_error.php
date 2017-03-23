@@ -3,6 +3,8 @@
 <title>My Form</title>
 </head>
 <body>
-	<h3>Erreur</h3>
+<div style="text-align:center;">
+	<h3>Erreur veuillez Reesayer</h3>
+</div> 
 </body>
 </html>

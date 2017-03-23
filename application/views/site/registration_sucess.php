@@ -3,6 +3,9 @@
 <title>My Form</title>
 </head>
 <body>
-	<h3>Your form was successfully submitted!</h3>
+<div style="text-align:center;">
+	<h3>Inscription reussi</h3>
+	<p>Votre mot de passe est : <?php echo $mdp; ?></p>
+</div> 
 </body>
 </html>
